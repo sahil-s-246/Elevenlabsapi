@@ -33,7 +33,7 @@ async def post_media_file(request: Request, name: str = Form(...)):
 
     """
     data = {
-        "text": f"My name is {name}",
+        "text": f"{name}",
         "model_id": "eleven_monolingual_v1",
         "voice_settings": {
             "stability": 0.5,
