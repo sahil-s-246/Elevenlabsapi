@@ -47,10 +47,10 @@ async def post_media_file(request: Request, name: str = Form(...)):
         raise HTTPException(status_code=response.status_code, detail="Error generating audio")
 
     # Write file to disk
-    audio_filename = f'tmp/{name}.mp3'
+    audio_filename = f'/tmp/{name}.mp3'
     with open(audio_filename, 'wb') as f:
         f.write(response.content)
-    return FileResponse(f"tmp/{name}.mp3", media_type='application/octet-stream', filename=f"{name}.mp3")
+    return FileResponse(f"/tmp/{name}.mp3", media_type='application/octet-stream', filename=f"{name}.mp3")
 
 
 if __name__ == "__main__":
